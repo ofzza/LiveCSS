@@ -1,0 +1,39 @@
+<!doctype>
+<html>
+
+    <head>
+        <title>LiveCSS test</title>
+
+        <script type="text/javascript" src="@@angularjs-url"></script>
+        <script type="text/javascript" src="../../livecss.js"></script>
+        <script>
+            window.addEventListener('load', function() {
+                // Initialize test module
+                var test = angular.module('test', ['LCSS']);
+                // Bootstrap angular
+                angular.bootstrap(document, ['test']);
+            });
+        </script>
+        <style>
+            * { font-family: monospace; }
+        </style>
+    </head>
+
+    <body>
+
+        <lcss src=" './index.lcss' "></lcss>
+        <lcss>
+            <style> #lcss-local-documents-count { color: blue; } </style>
+        </lcss>
+
+        <h1>Remote LiveCSS syntax</h1>
+        <span>Should apply 'red' color: .......................... </span>
+        <strong style=" font-size: 64px; margin-top: -64px; display: inline-block; " id="lcss-remote-documents-count"> ?! </strong>
+
+        <h1>Local LiveCSS syntax</h1>
+        <span>Should apply 'blue' color: .......................... </span>
+        <strong style=" font-size: 64px; margin-top: -64px; display: inline-block; " id="lcss-local-documents-count"> ?! </strong>
+
+    </body>
+
+</html>

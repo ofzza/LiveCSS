@@ -1,0 +1,56 @@
+<!doctype>
+<html>
+
+    <head>
+        <title>LiveCSS test</title>
+
+        <script type="text/javascript" src="@@angularjs-url"></script>
+        <script type="text/javascript" src="../../livecss.js"></script>
+        <script>
+            window.addEventListener('load', function() {
+                // Initialize test module
+                var test = angular.module('test', ['LCSS']);
+                // Configure LCSS
+                test.config(['LCSSProvider', function(LCSSProvider) {
+                    LCSSProvider.target( document.getElementById('angular-app-host') );
+                }]);
+                // Run module
+                test.run([ 'LCSS', function(LCSS) {
+
+                    // Load remote LiveCss syntax file
+                    LCSS.parse({
+                        syntaxUrl: './index.lcss'
+                    }).then( function(docs) { document.getElementById('lcss-remote-documents-count').innerHTML = docs.length; } );
+
+                    // Load local LiveCss syntax
+                    LCSS.parse({
+                        syntax: '<style> #lcss-local-documents-count { color: blue; } </style>'
+                    }).then( function(docs) { document.getElementById('lcss-local-documents-count').innerHTML = docs.length; } );
+
+                } ]);
+                // Bootstrap angular
+                angular.bootstrap( document.body, ['test'] );
+            });
+        </script>
+        <style>
+            * { font-family: monospace; }
+        </style>
+    </head>
+
+    <body>
+
+        <div id="angular-app-host">
+
+            <h1>Remote LiveCSS syntax</h1>
+            <span>Should have 2 documents and should apply 'red' color:</span>
+            <strong style=" font-size: 64px; margin-top: -64px; display: inline-block; " id="lcss-remote-documents-count"></strong>
+
+            <h1>Local LiveCSS syntax</h1>
+            <span>Should have 1 documents and should apply 'blue' color:</span>
+            <strong style=" font-size: 64px; margin-top: -64px; display: inline-block; " id="lcss-local-documents-count"></strong>
+
+        </div>
+
+    </body>
+
+</html>

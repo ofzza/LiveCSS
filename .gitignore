@@ -1,0 +1,15 @@
+# Ignore IDE project data
+.idea
+
+# Ignore NPM packages
+node_modules
+
+# Ignore Windows' thumbnails
+Thumb.db
+
+# Ignore WEB
+public_html
+
+# Ignore versioned tests
+test/versioned
+
