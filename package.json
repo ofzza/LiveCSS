@@ -20,13 +20,9 @@
         "url": "https://github.com/ofzza/LiveCSS.git"
     },
 
-    "author": "ofzza",
-    "license": "ISC",
-
     "bugs": {
         "url": "https://github.com/ofzza/LiveCSS/issues"
     },
-    "homepage": "https://github.com/ofzza/LiveCSS",
 
     "devDependencies": {
         "grunt": "*",
