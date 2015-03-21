@@ -1448,6 +1448,11 @@
 
                         // Set debugging flag
                         $debug = LCSSGlobalsProvider.$debug;
+                        LCSS.$debug = $debug = LCSSGlobalsProvider.$debug = false;
+                        Object.defineProperty(LCSS, '$debug', {
+                            get: function() { return LCSSGlobalsProvider.$debug; },
+                            set: function(val) { $debug = LCSSGlobalsProvider.$debug = val; }
+                        });
 
                         // Expose LiveCss document class
                         LCSS.Document = LCSS.Doc = LCSSDocumentProvider;
