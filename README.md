@@ -1,3 +1,10 @@
+<p align="center">
+  <a target="_blank" href="http://www.livecss.or">
+    <img src="http://www.livecss.org/res/style/img/Logo-50p.png" alt="Live CSS" /> <br/>
+    Visit the official site at: www.livecss.org
+  </a>
+</p>
+
 # <a name="about"></a> About
 
 LiveCSS is an AngularJS module that allows you to use all of the Angular magic inside your CSS files, and a few things extra. If you ever wanted to just be able to write something like:
